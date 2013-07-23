@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% autoescape true %}
+<html>
+  <head>
+    <title>Vine-Haven</title>
+    <link type="text/css" rel="stylesheet" href="static/style.css" />
+
+  </head>
+  <body>
+    <form action="/vines" method="post">
+      <input name="content">
+      <input type="submit" value="Go">
+    </form>
+    <h1>Welcome To Vine Haven</h1>{{x}}
+
+  <div class='flex-container'>
+    
+    <div class='vine'>    
+      <div>    
+        <video src='static/1.mp4' loop='true' controls></video>
+      </div>
+      <div class='user'>
+        <img class='pic' src='static/pic.jpg'>
+        <p>Foo</p>
+        <p class='tweet'>Ayeeeeee lol and we are about to begin a fantastic journey and here we go, wo hooo</p>
+      </div>    
+    </div>
+
+
+    {% for i in arr %}
+      <div class='vine'>    
+        <div>    
+          <video src='{{i.video}}' loop='true' controls></video>
+        </div>
+        <div class='user'>
+          <img class='pic' src='{{i.user_pic}}'>
+          <p>{{i.user}}</p>
+          <p class='tweet'>{{i.tweet}}</p>
+        </div>    
+      </div>
+    {% endfor %}
+  </div>
+
+  </body>
+</html>
+{% endautoescape %}
